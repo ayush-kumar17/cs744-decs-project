@@ -1,7 +1,6 @@
 #include "../include/httplib.h"
 #include "cache.hpp"
 #include "db.hpp"
-
 #include <thread>
 #include <vector>
 #include <queue>
@@ -68,7 +67,7 @@ int main(int argc, char** argv) {
         : "host=127.0.0.1 port=5432 dbname=kvstore user=kvuser password=kvpass";
 
     size_t cache_capacity = 2000;
-    int pool_size = 8;
+    int pool_size = 16;
 
     auto cache = make_shared<LRUCache>(cache_capacity);
 
