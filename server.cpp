@@ -138,7 +138,6 @@ int main() {
         res.status = 200;
     });
 
-    // ✅ NEW ROUTE ADDED HERE
     svr.Get("/check_cache", [&](const httplib::Request& req, httplib::Response& res) {
         if (!req.has_param("key")) {
             res.status = 400;
@@ -168,7 +167,6 @@ int main() {
 
         freeReplyObject(reply);
     });
-    // ✅ END NEW ROUTE
 
     cout << "Server running on http://localhost:8080" << endl;
     svr.listen("0.0.0.0", 8080);
